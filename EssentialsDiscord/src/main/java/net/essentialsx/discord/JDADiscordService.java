@@ -400,7 +400,7 @@ public class JDADiscordService implements DiscordService, IEssentialsModule {
 
         shutdownConsoleRelay(false);
         consoleWebhook = DiscordUtil.getWebhookClient(webhookId, webhookToken, jda.getHttpClient());
-        if (injector == null) {
+        if (injector == null || injector.isRemoved()) {
             injector = new ConsoleInjector(this);
             injector.start();
         }
