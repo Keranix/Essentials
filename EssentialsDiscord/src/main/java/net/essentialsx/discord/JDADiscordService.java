@@ -479,7 +479,7 @@ public class JDADiscordService implements DiscordService, IEssentialsModule {
                 return;
             }
             future.complete(null);
-        });
+        }, fail -> future.complete(null));
         return future;
     }
 
