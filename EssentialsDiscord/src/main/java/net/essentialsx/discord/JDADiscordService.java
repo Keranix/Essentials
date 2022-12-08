@@ -429,7 +429,7 @@ public class JDADiscordService implements DiscordService, IEssentialsModule {
 
             shutdownConsoleRelay(true);
 
-            for (WebhookClient webhook : channelIdToWebhook.values()) {
+            for (WrappedWebhookClient webhook : channelIdToWebhook.values()) {
                 webhook.close();
             }
 
